@@ -8,7 +8,9 @@ class Hitbox:
         self.__y = y
         self.__set_width(width)
         self.__set_height(height)
-        self.__black_list = [world.CONCRETE, world.BRICK, world.WATER]
+
+        #4
+        self.__black_list = [world.CONCRETE, world.BRICK, world.WATER, world.MISSLE]
 
 
 
