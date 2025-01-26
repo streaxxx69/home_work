@@ -12,6 +12,9 @@ class Hitbox:
         #4
         self.__black_list = [world.CONCRETE, world.BRICK, world.WATER, world.MISSLE]
 
+    def set_blacklist(self,blacklist):
+        self.__black_list = blacklist
+
 
 
     def __get_corner_points(self):

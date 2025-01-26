@@ -29,7 +29,11 @@ def update():
     w.after(1000//FPS, update)
 
 def key_press(event):
+
+
     player = tanks_collection.get_player()
+    if player.is_destroyed():
+        return
     if event.keycode == KEY_W:
         player.forvard()
     elif event.keycode == KEY_S:
