@@ -28,7 +28,7 @@ class Tank:
         self.__vx = 0
         self.__vy = 0
         self.__dx = 0
-        self.__dy = 0
+        self.__dy = 0 
         if self.__x < 0:
             self.__x = 0
         if self.__y < 0:
