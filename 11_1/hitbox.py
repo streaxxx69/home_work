@@ -1,8 +1,8 @@
 import world
 class Hitbox:
-    def __init__(self,x,y,width,height,padding=0):
+    def init(self,x,y,width,height,padding=0):
         self.pad=padding
-        self.__x=x
+        self.x=x
         self.__y = y
         self.__set_width(width)
         self.__set_height(height)
@@ -22,17 +22,17 @@ class Hitbox:
     def check_map_collision(self,details):
         collision = False
         for point in self.__get_corner_points():
-            row=world.get_row(point['y'])
-            col=world.get_col(point['x'])
-            block=world.get_block(row, col)
+            row= world.get_row(point['y'])
+            col= world.get_col(point['x'])
+            block= world.get_block(row, col)
             if block in self.__black_list:
                 details[block]={'row':row, 'col':col}
                 collision= True
                 #print(details)
         return collision
 
-    def __str__(self):
-        return f"({self.__x=}, {self.__y=}, {self.__width=}, {self.__height=})"
+    def __str(self):
+        return f"({self.x=}, {self.__y=}, {self.__width=}, {self.__height=})"
 
     def __get_width(self):
         return self.__width
@@ -70,7 +70,7 @@ class Hitbox:
         self.__set_x(dx + self.__get_x())
         self.__set_y(dy + self.__get_y())
 
-    def __str__(self):
+    def __str(self):
         return f"({self.__x=}, {self.__y=}, {self.__width=}, {self.__height=})"
 
     def intersects(self, other):
